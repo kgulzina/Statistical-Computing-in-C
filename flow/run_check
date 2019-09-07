@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+COMMAND="./poisbin -m n"
+
+# printf "Quick an easy:\n"
+cat stat580_hw3.txt | ${COMMAND} -n 5 -k 0
+cat stat580_hw3.txt | ${COMMAND} -n 5 -k 1
+cat stat580_hw3.txt | ${COMMAND} -n 5 -k 2
+cat stat580_hw3.txt | ${COMMAND} -n 5 -k 3
+cat stat580_hw3.txt | ${COMMAND} -n 5 -k 4
+cat stat580_hw3.txt | ${COMMAND} -n 5 -k 5
+
+# printf "\nGearing up (may be slow for some implementations):\n"
+cat stat580_hw3.txt | ${COMMAND} -n 30 -k 15
+
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 0
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 1
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 3
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 10
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 295
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 299
+cat stat580_hw3.txt | ${COMMAND} -n 300 -k 300
+
+cat stat580_hw3.txt | ${COMMAND} -n 10451 -k 0
+cat stat580_hw3.txt | ${COMMAND} -n 10451 -k 3
+cat stat580_hw3.txt | ${COMMAND} -n 10451 -k 10449
+cat stat580_hw3.txt | ${COMMAND} -n 10451 -k 10451

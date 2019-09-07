@@ -1,0 +1,1 @@
+rm poisbin; gcc -pg -Wall -pedantic -o poisbin main.c interface.c pmf_naive.c pmf_recursion.c pmf_triangle.c -lm;
