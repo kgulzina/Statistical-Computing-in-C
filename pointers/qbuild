@@ -1,0 +1,3 @@
+rm classify cov.txt inverse.txt output.txt; gcc -Wall -pedantic -g -o classify classify.c -lm; ./classify stat580_hw4-1.txt > output.txt
+head output.*
+md5sum output.*
