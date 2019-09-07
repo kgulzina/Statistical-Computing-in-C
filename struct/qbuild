@@ -1,0 +1,4 @@
+rm seq -f;
+gcc *.c -Wall -pedantic -o seq -pg -lcmph -L/usr/lib/x86_64-linux-gnu/;
+./seq /home/luis/Downloads/SRR2990088_1_noN.fastq -n 5;
+

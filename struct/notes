@@ -1,0 +1,41 @@
+We need to provide Sepideh and Soura with the following variables:
+
+(1) a scalar int nreads representing the number of reads.
+(2) a scalar int nhash representing the number of unique sequences.
+(3) an array of size nhash called int *counts representing x_1, ..., x_nhash;
+(4) an array of size nreads called char *scores representing the quality scores q_1, ..., q_nreads.
+
+We need to create a struct to represent "one reading".
+
+In Canvas Dr. Dorman said that, even though she preprocessed the file so that every entry has the same length, we should make this for readings with variable length. Based off her answer in Canvas, it seems we don't have to store lines 1 and 3.
+
+Struct with three elements: int n (size of the read), an char array of size n with the sequence, a char array with the quality scores.
+
+What is the spec of the binary file?
+
+If the binary file exists, jump to 2.
+If the hash table exists, jump to 6.
+  1. Read the fastq file and write the needed lines only to a binary files.
+
+  2. Read the binary file and populate the array struct array.
+  3. Go over the struct array, create the hash and compute the counts (nhash).
+  4. Go over the struct array again and populate the index array (size nhash).
+  5. Write the hash file to disk.
+
+6. Read the hash file and return the counts (for question 2b and 2c).
+7. Read the hash file and produce an average score quality per each unique hash (for question 2d).
+
+@SRR2990088.1 1/1
+TACGGAGGATCCGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGTAGGCGGCCTTTTAAGTCAGCGGTGAAAGTCTGTGGCTCAACCCTTGAATTCCCGTTGAAACTGCGTGTCTTGAGTATTTTTGAGGCCGGCGGATTGCGTGGTGTAGCGGTGAATTGCTTAGTTATCTCGCAGAACCCCGTTTGCGATGGCAGCTTGCTAAGCCATGACTGACGCTGATCCACGAAAGCGTGGGGATCAACCC
++
+CCCCCEFG7ECF8@FFGGG@GGGGDFBFG@EFDEF@FGFFFG9FC@BFB@@76@F@@@CECC6CFF,E=+8B+B<E,<<??<C<DFDAFEE,:,,,,5C,C<+BF:+,A,C<,++++9CE,,4E,5,:9>+++,3+8++8+8+@,7+5*@D*4>,9@8E>43+=,CG1:*+5,,2,5,:)/1<2:F76/:C):5)*3*)*(0(1*1+,+06/*302)6))(((,((3*.).(,*-((,4800(((-46).(
+@SRR2990088.2 2/1
+TACGGAGGATCCGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGTAGGCGGCCTTTTAAGTCAGCGGTGAAAGTCTGTGGCTCAACCATTGAATTGCCGTTGAAACTGGTGGTCTTGAGTATTTTTGAGTCAGGCGGAATGCGTGGTGTAGCGGTGAAATGCTTAGATATCCCGCAGAACCCCGATTGCGAAGGCAGCCTGCTAAGCCCTGACTGACGCTGTTGCTCGACAGCGTTGGGATCAAACA
++
+C@CCCDFG,ECF8@FFEFG,FGGGGECGGEEGDEFFGGGCCFCGC@BFC@F7C@F@@@EFDC,CFG,CC+8C+?=E,<9C55<4@FE?AEE,:,,,,5C,C5+CE7=,,5C,,,,++9CE9<,E,9,CAE7+448,8,33+++@,=+@+3DC=>;;56C+47+?,BF+=*+7,7>,35;***?,5C59)=F4A)2)/)8*68(0*2+,+),.*53*(7)//((--(<*6).(-1,(,(-(,((((-(+*,(
+@SRR2990088.3 3/1
+TACGGAGGATCCGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGTAGGCGGCCTTTTAAGTCAGCGGTGAAAGTCTGTGGCTCAACCATTGAATTGCCGTTGAAACTGGCGGGCTTGAGTATGTTTGAGTCAGGCGGATTGCGTGGTGTAGCGGTGAATTGCTTAGATATCACGCAGAACCCCGATTGCGAAGGCAGCTTGCCAAGCCATGACTGACGCTGTTCCACGAAAGCGTGGGGATCAAACA
+
+
+
+
