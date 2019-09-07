@@ -1,0 +1,1 @@
+rm a.out; gcc *.c -DSTANDALONE -pedantic -Wall -lm -I/usr/share/R/include; ./a.out;
